@@ -5,7 +5,7 @@ import mexico from "../assets/ESCUDO_MEXICO-logo-B3E591388D-seeklogo.com.png";
 const NavBar = () => {
   return (
     <HStack>
-      <Image src={mexico} boxSize="60px"></Image>
+      <Image src={mexico} boxSize="60px" p={2}></Image>
       <Text>NavBar</Text>
     </HStack>
   );
