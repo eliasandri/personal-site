@@ -1,16 +1,25 @@
-import React from "react";
+import { SimpleGrid } from "@chakra-ui/react";
+import { books } from "../data/books";
+import GameCard from "./GameCard";
 
-interface Books {
+export interface Book {
   id: number;
   name: string;
+  description: string;
+  background_image?: string;
 }
 
 const GameGrid = () => {
   return (
-    <ul>
-      <li>The Almanack of Naval Ravikant</li>
-      <li>Private Equity: A Memoir</li>
-    </ul>
+    <SimpleGrid
+      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+      padding="10px"
+      spacing={10}
+    >
+      {books.map((book) => (
+        <GameCard key={book.id} book={book}></GameCard>
+      ))}
+    </SimpleGrid>
   );
 };
 
