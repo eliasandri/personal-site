@@ -14,6 +14,7 @@ export interface Book {
 export interface Genre {
   id: number;
   name: string;
+  image_background?: string;
 }
 
 const GameGrid = () => {
@@ -21,7 +22,7 @@ const GameGrid = () => {
     <SimpleGrid
       columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
       padding="10px"
-      spacing={10}
+      spacing={6}
     >
       {books.map((book) => (
         <GameCardContainer>

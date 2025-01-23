@@ -1,7 +1,8 @@
 import { Genre } from "../components/GameGrid";
+import fantasy from '../assets/fantasy.png'
 
 export const genres: Genre[] = [
-    { id: 1, name: "Fantasy" },
+    { id: 1, name: "Fantasy", image_background: fantasy },
   { id: 2, name: "Science Fiction" },
   { id: 3, name: "Mystery" },
   { id: 4, name: "Thriller" },
