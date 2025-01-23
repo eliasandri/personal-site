@@ -7,6 +7,7 @@ export interface Book {
   name: string;
   description: string;
   background_image?: string;
+  grade: number;
 }
 
 const GameGrid = () => {
