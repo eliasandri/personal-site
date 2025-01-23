@@ -11,6 +11,11 @@ export interface Book {
   grade: number;
 }
 
+export interface Genre {
+  id: number;
+  name: string;
+}
+
 const GameGrid = () => {
   return (
     <SimpleGrid
