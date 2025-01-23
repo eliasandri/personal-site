@@ -1,6 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { books } from "../data/books";
 import GameCard from "./GameCard";
+import GameCardContainer from "./GameCardContainer";
 
 export interface Book {
   id: number;
@@ -18,7 +19,9 @@ const GameGrid = () => {
       spacing={10}
     >
       {books.map((book) => (
-        <GameCard key={book.id} book={book}></GameCard>
+        <GameCardContainer>
+          <GameCard key={book.id} book={book}></GameCard>
+        </GameCardContainer>
       ))}
     </SimpleGrid>
   );

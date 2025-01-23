@@ -1,6 +1,7 @@
 import React from "react";
 import { Book } from "./GameGrid";
 import {
+  Box,
   Card,
   CardBody,
   Heading,
@@ -16,7 +17,7 @@ interface Props {
 
 const GameCard = ({ book }: Props) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
+    <Card>
       <Image src={book.background_image}></Image>
       <CardBody>
         <Heading fontSize="2xl">{book.name}</Heading>

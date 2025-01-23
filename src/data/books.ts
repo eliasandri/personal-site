@@ -5,6 +5,7 @@ import mockinbird from '../assets/Mockingbird-Alt.png'
 import navalRavikant from '../assets/the_almanack_of_naval_ravikant.webp'
 import privateEquity from '../assets/private_equity.jpg'
 import surrenderExperiment from '../assets/Surrender_experiment.jpg'
+import hormozi from '../assets/100m_offer.jpg'
 
 export const books: Book[] = [
     {
@@ -27,6 +28,14 @@ export const books: Book[] = [
       description: "The Surrender Experiment by Michael A. Singer is a profound memoir about letting go of personal control and embracing life’s flow, leading to unexpected success and spiritual awakening.",
       background_image: surrenderExperiment,
       grade: 9.5
-    }
+    },
+    {
+        id: 4,
+        name: "$100M Offers: How To Make Offers So Good People Feel Stupid Saying No",
+        description: 
+        "$100M Offers: How To Make Offers So Good People Feel Stupid Saying No by Alex Hormozi is a practical guide to creating compelling, high-value offers that attract customers and drive exponential business growth.",
+        background_image: hormozi,
+        grade: 8.5
+      },
   ];
   
