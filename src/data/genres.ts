@@ -23,4 +23,5 @@ export const genres: Genre[] = [
   { id: 19, name: "Graphic Novels" },
   { id: 20, name: "Travel" },
   { id: 21, name: "Philosophy" },
+  { id: 22, name: "Psychology" },
   ];

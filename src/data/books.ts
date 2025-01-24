@@ -6,6 +6,7 @@ import navalRavikant from '../assets/the_almanack_of_naval_ravikant.webp'
 import privateEquity from '../assets/private_equity.jpg'
 import surrenderExperiment from '../assets/Surrender_experiment.jpg'
 import hormozi from '../assets/100m_offer.jpg'
+import unthetheredSoul from '../assets/untethered_soul.jpg'
 
 export const books: Book[] = [
     {
@@ -33,7 +34,7 @@ export const books: Book[] = [
       name: "The Surrender Experiment: My Journey into Life's Perfection.",
       description: "The Surrender Experiment by Michael A. Singer is a profound memoir about letting go of personal control and embracing life’s flow, leading to unexpected success and spiritual awakening.",
       background_image: surrenderExperiment,
-      grade: 9.5,
+      grade: 8.5,
       genres: ['Autobiography', 'Self-Help', 'Philosophy' ],
       author: 'Michael A. Singer',
       release_date: new Date('2015-06-02'),
@@ -48,6 +49,17 @@ export const books: Book[] = [
         genres: ['Self-Help', 'Business'],
         author: 'Alex Hormozi',
         release_date: new Date('2021-08-02'),
+      },
+      {
+        id: 5,
+        name: "The Untethered Soul: The Journey Beyond Yourself",
+        description: 
+        "The Untethered Soul: The Journey Beyond Yourself by Michael A. Singer is a spiritual guide that explores self-awareness and inner peace by encouraging readers to transcend their limitations and discover their true selves",
+        background_image: unthetheredSoul,
+        grade: 9.5,
+        genres: ['Self-Help', 'Philosophy', 'Psychology'],
+        author: 'Michael A. Singer',
+        release_date: new Date('2007-10-03'),
       },
   ];
   
