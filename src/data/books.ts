@@ -14,7 +14,8 @@ export const books: Book[] = [
       description: "The Almanack of Naval Ravikant is a compilation of timeless wisdom and insights on wealth, happiness, and living a fulfilling life, distilled from Naval's reflections and experiences.",
       background_image: navalRavikant,
       grade: 8.5,
-      genres: ['Self-Help', 'Business', 'Philosophy']
+      genres: ['Self-Help', 'Business', 'Philosophy'],
+      author: 'Eric Jorgenson'
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ export const books: Book[] = [
       description: "Private Equity: A Memoir, by Carrie Sun is a gripping account of one woman's self-discovery inside a top Wall Street firm, offering an urgent indictment of privilege, extreme wealth, and work culture.",
       background_image: privateEquity,
       grade: 6.5,
-      genres: ['Autobiography', 'Business']
+      genres: ['Autobiography', 'Business'],
+      author: 'Carrie Sun'
     },
     {
       id: 3,
@@ -30,7 +32,8 @@ export const books: Book[] = [
       description: "The Surrender Experiment by Michael A. Singer is a profound memoir about letting go of personal control and embracing life’s flow, leading to unexpected success and spiritual awakening.",
       background_image: surrenderExperiment,
       grade: 9.5,
-      genres: ['Autobiography', 'Self-Help', 'Philosophy' ]
+      genres: ['Autobiography', 'Self-Help', 'Philosophy' ],
+      author: 'Michael A. Singer'
     },
     {
         id: 4,
@@ -39,7 +42,8 @@ export const books: Book[] = [
         "$100M Offers: How To Make Offers So Good People Feel Stupid Saying No by Alex Hormozi is a practical guide to creating compelling, high-value offers that attract customers and drive exponential business growth.",
         background_image: hormozi,
         grade: 8.5,
-        genres: ['Self-Help', 'Business']
+        genres: ['Self-Help', 'Business'],
+        author: 'Alex Hormozi'
       },
   ];
   

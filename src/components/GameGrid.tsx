@@ -10,12 +10,18 @@ export interface Book {
   background_image?: string;
   grade: number;
   genres: string[];
+  author: string;
 }
 
 export interface Genre {
   id: number;
   name: string;
   image_background?: string;
+}
+
+export interface Author {
+  id: number;
+  name: string;
 }
 interface Props {
   selectedGenre: Genre | null;
