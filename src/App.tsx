@@ -1,9 +1,10 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid, { Author, Genre } from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
 import AuthorSelector from "./components/AuthorSelector";
+import SortSelector from "./components/SortSelector";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -36,10 +37,13 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <AuthorSelector
-          selectedAuthor={gameQuery.author}
-          onSelectAuthor={(author) => setGameQuery({ ...gameQuery, author })}
-        ></AuthorSelector>
+        <HStack spacing={5} paddingLeft={2} marginBottom={5}>
+          <AuthorSelector
+            selectedAuthor={gameQuery.author}
+            onSelectAuthor={(author) => setGameQuery({ ...gameQuery, author })}
+          ></AuthorSelector>
+          <SortSelector></SortSelector>
+        </HStack>
         <GameGrid gameQuery={gameQuery}></GameGrid>
       </GridItem>
     </Grid>
