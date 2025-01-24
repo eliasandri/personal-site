@@ -12,6 +12,7 @@ export interface Book {
   grade: number;
   genres: string[];
   author: string;
+  release_date: Date;
 }
 
 export interface Genre {
@@ -29,13 +30,25 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery }: Props) => {
-  // Filter books if selectedGenre is not null
-  /*const books = selectedGenre
-    ? allBooks.filter((book) => book.genres.includes(selectedGenre.name))
-    : allBooks;*/
+  console.log(gameQuery.sortOrder);
+  const sorter: keyof Book = (gameQuery.sortOrder ?? "name") as keyof Book;
+  const sortedBooks = allBooks.sort((a, b) => {
+    const valueA = a[sorter];
+    const valueB = b[sorter];
+
+    if (typeof valueA === "string" && typeof valueB === "string") {
+      return valueA.localeCompare(valueB);
+    } else if (typeof valueA === "number" && typeof valueB === "number") {
+      return valueB - valueA;
+    } else if (valueA instanceof Date && valueB instanceof Date) {
+      return valueB.getTime() - valueA.getTime(); // For ascending orderelse {
+    } else {
+      return 0;
+    }
+  });
 
   // Filter books based on selectedGenre and selectedAuthor
-  const books = allBooks.filter((book) => {
+  const books = sortedBooks.filter((book) => {
     // Check if the book matches the selected genre (if selectedGenre is not null)
     const genreMatch = gameQuery.genre
       ? book.genres.includes(gameQuery.genre.name)

@@ -15,7 +15,8 @@ export const books: Book[] = [
       background_image: navalRavikant,
       grade: 8.5,
       genres: ['Self-Help', 'Business', 'Philosophy'],
-      author: 'Eric Jorgenson'
+      author: 'Eric Jorgenson',
+      release_date: new Date('2020-09-15'),
     },
     {
       id: 2,
@@ -24,7 +25,8 @@ export const books: Book[] = [
       background_image: privateEquity,
       grade: 6.5,
       genres: ['Autobiography', 'Business'],
-      author: 'Carrie Sun'
+      author: 'Carrie Sun',
+      release_date: new Date('2024-02-13'),
     },
     {
       id: 3,
@@ -33,7 +35,8 @@ export const books: Book[] = [
       background_image: surrenderExperiment,
       grade: 9.5,
       genres: ['Autobiography', 'Self-Help', 'Philosophy' ],
-      author: 'Michael A. Singer'
+      author: 'Michael A. Singer',
+      release_date: new Date('2015-06-02'),
     },
     {
         id: 4,
@@ -43,7 +46,8 @@ export const books: Book[] = [
         background_image: hormozi,
         grade: 8.5,
         genres: ['Self-Help', 'Business'],
-        author: 'Alex Hormozi'
+        author: 'Alex Hormozi',
+        release_date: new Date('2021-08-02'),
       },
   ];
   
