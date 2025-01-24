@@ -1,12 +1,14 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
-import GameGrid, { Genre } from "./components/GameGrid";
+import GameGrid, { Author, Genre } from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
 import AuthorSelector from "./components/AuthorSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedAuthor, setSelectedAuthor] = useState<Author | null>(null);
+
   return (
     <Grid
       templateAreas={{
@@ -30,8 +32,14 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <AuthorSelector></AuthorSelector>
-        <GameGrid selectedGenre={selectedGenre}></GameGrid>
+        <AuthorSelector
+          selectedAuthor={selectedAuthor}
+          onSelectAuthor={(author) => setSelectedAuthor(author)}
+        ></AuthorSelector>
+        <GameGrid
+          selectedGenre={selectedGenre}
+          selectedAuthor={selectedAuthor}
+        ></GameGrid>
       </GridItem>
     </Grid>
   );
