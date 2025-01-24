@@ -2,6 +2,7 @@ import { filter, SimpleGrid } from "@chakra-ui/react";
 import { books as allBooks } from "../data/books";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
+import { GameQuery } from "../App";
 
 export interface Book {
   id: number;
@@ -24,11 +25,10 @@ export interface Author {
   name: string;
 }
 interface Props {
-  selectedGenre: Genre | null;
-  selectedAuthor: Author | null;
+  gameQuery: GameQuery;
 }
 
-const GameGrid = ({ selectedGenre, selectedAuthor }: Props) => {
+const GameGrid = ({ gameQuery }: Props) => {
   // Filter books if selectedGenre is not null
   /*const books = selectedGenre
     ? allBooks.filter((book) => book.genres.includes(selectedGenre.name))
@@ -37,13 +37,13 @@ const GameGrid = ({ selectedGenre, selectedAuthor }: Props) => {
   // Filter books based on selectedGenre and selectedAuthor
   const books = allBooks.filter((book) => {
     // Check if the book matches the selected genre (if selectedGenre is not null)
-    const genreMatch = selectedGenre
-      ? book.genres.includes(selectedGenre.name)
+    const genreMatch = gameQuery.genre
+      ? book.genres.includes(gameQuery.genre.name)
       : true;
 
     // Check if the book matches the selected author (if selectedAuthor is not null)
-    const authorMatch = selectedAuthor
-      ? book.author === selectedAuthor.name
+    const authorMatch = gameQuery.author
+      ? book.author === gameQuery.author.name
       : true;
 
     // Return true only if both conditions (genre and author) match

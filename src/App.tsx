@@ -5,9 +5,13 @@ import GenreList from "./components/GenreList";
 import { useState } from "react";
 import AuthorSelector from "./components/AuthorSelector";
 
+export interface GameQuery {
+  genre: Genre | null;
+  author: Author | null;
+}
+
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedAuthor, setSelectedAuthor] = useState<Author | null>(null);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <Grid
@@ -26,20 +30,17 @@ function App() {
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList
-            selectedGenre={selectedGenre}
-            onSelectGenre={(genre) => setSelectedGenre(genre)}
+            selectedGenre={gameQuery.genre}
+            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           ></GenreList>
         </GridItem>
       </Show>
       <GridItem area="main">
         <AuthorSelector
-          selectedAuthor={selectedAuthor}
-          onSelectAuthor={(author) => setSelectedAuthor(author)}
+          selectedAuthor={gameQuery.author}
+          onSelectAuthor={(author) => setGameQuery({ ...gameQuery, author })}
         ></AuthorSelector>
-        <GameGrid
-          selectedGenre={selectedGenre}
-          selectedAuthor={selectedAuthor}
-        ></GameGrid>
+        <GameGrid gameQuery={gameQuery}></GameGrid>
       </GridItem>
     </Grid>
   );
