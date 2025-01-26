@@ -30,7 +30,6 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery }: Props) => {
-  console.log(gameQuery.sortOrder);
   const sorter: keyof Book = (gameQuery.sortOrder ?? "name") as keyof Book;
   const sortedBooks = allBooks.sort((a, b) => {
     const valueA = a[sorter];
