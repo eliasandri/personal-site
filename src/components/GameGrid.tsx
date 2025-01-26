@@ -30,8 +30,21 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery }: Props) => {
+  // Only get books that are included in a searchInput. Default is all books
+  const searchedBooks = gameQuery.searchText
+    ? allBooks.filter(
+        (book) =>
+          book.name
+            .toLowerCase()
+            .includes(gameQuery.searchText.toLowerCase()) ||
+          book.author.toLowerCase().includes(gameQuery.searchText.toLowerCase())
+      )
+    : allBooks;
+  //console.log(searchedBooks);
+
+  // Code for sorting books based on three filters
   const sorter: keyof Book = (gameQuery.sortOrder ?? "name") as keyof Book;
-  const sortedBooks = allBooks.sort((a, b) => {
+  const sortedBooks = searchedBooks.sort((a, b) => {
     const valueA = a[sorter];
     const valueB = b[sorter];
 
