@@ -1,8 +1,11 @@
-import { filter, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { books as allBooks } from "../data/books";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import { GameQuery } from "../App";
+import { sortBooks } from "../utils/sortBooks";
+import { searchBooks } from "../utils/searchBooks";
+import { filterBooksByQuery } from "../utils/filterBooksByQuery";
 
 export interface Book {
   id: number;
@@ -31,7 +34,8 @@ interface Props {
 
 const GameGrid = ({ gameQuery }: Props) => {
   // Only get books that are included in a searchInput. Default is all books
-  const searchedBooks = gameQuery.searchText
+  const searchedBooks = searchBooks(allBooks, gameQuery.searchText);
+  /*const searchedBooks = gameQuery.searchText
     ? allBooks.filter(
         (book) =>
           book.name
@@ -39,12 +43,12 @@ const GameGrid = ({ gameQuery }: Props) => {
             .includes(gameQuery.searchText.toLowerCase()) ||
           book.author.toLowerCase().includes(gameQuery.searchText.toLowerCase())
       )
-    : allBooks;
-  //console.log(searchedBooks);
+    : allBooks;*/
 
   // Code for sorting books based on three filters
   const sorter: keyof Book = (gameQuery.sortOrder ?? "name") as keyof Book;
-  const sortedBooks = searchedBooks.sort((a, b) => {
+  const sortedBooks = sortBooks(searchedBooks, sorter);
+  /*const sortedBooks = searchedBooks.sort((a, b) => {
     const valueA = a[sorter];
     const valueB = b[sorter];
 
@@ -57,10 +61,11 @@ const GameGrid = ({ gameQuery }: Props) => {
     } else {
       return 0;
     }
-  });
+  });*/
 
   // Filter books based on selectedGenre and selectedAuthor
-  const books = sortedBooks.filter((book) => {
+  const books = filterBooksByQuery(sortedBooks, gameQuery);
+  /*const books = sortedBooks.filter((book) => {
     // Check if the book matches the selected genre (if selectedGenre is not null)
     const genreMatch = gameQuery.genre
       ? book.genres.includes(gameQuery.genre.name)
@@ -73,7 +78,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 
     // Return true only if both conditions (genre and author) match
     return genreMatch && authorMatch;
-  });
+  });*/
 
   return (
     <SimpleGrid

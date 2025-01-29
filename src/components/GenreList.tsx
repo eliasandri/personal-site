@@ -5,7 +5,6 @@ import {
   Image,
   List,
   ListItem,
-  Text,
 } from "@chakra-ui/react";
 import { genres } from "../data/genres";
 import { Genre } from "./GameGrid";
