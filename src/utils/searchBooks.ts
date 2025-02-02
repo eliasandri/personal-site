@@ -1,6 +1,6 @@
 import { Book } from "../components/GameGrid";
 
-export function searchBooks(allBooks: Book[], searchText: string): Book[] {
+export function searchBooks(allBooks: Book[], searchText: string | undefined): Book[] {
     if (!searchText) {
       return allBooks;
     }

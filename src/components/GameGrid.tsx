@@ -2,12 +2,11 @@ import { Box, Button, SimpleGrid } from "@chakra-ui/react";
 import { books as allBooks } from "../data/books";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "../App";
 import { sortBooks } from "../utils/sortBooks";
 import { searchBooks } from "../utils/searchBooks";
 import { filterBooksByQuery } from "../utils/filterBooksByQuery";
 import { useState } from "react";
-import React from "react";
+import useGameQueryStore, { GameQuery } from "../store";
 
 export interface Book {
   id: number;
@@ -30,11 +29,9 @@ export interface Author {
   id: number;
   name: string;
 }
-interface Props {
-  gameQuery: GameQuery;
-}
 
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = () => {
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
   const [visibleCount, setVisibleCount] = useState(4); // State to manage the number of visible books
 
   // Only get books that are included in a searchInput. Default is all books
@@ -45,7 +42,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   const sortedBooks = sortBooks(searchedBooks, sorter);
 
   // Filter books based on selectedGenre and selectedAuthor
-  const filteredBooks = filterBooksByQuery(sortedBooks, gameQuery);
+  const filteredBooks = filterBooksByQuery(sortedBooks);
 
   // Get the books to display based on the current visible count
   const booksToDisplay = filteredBooks.slice(0, visibleCount);

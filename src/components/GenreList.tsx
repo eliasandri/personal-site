@@ -7,14 +7,11 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { genres } from "../data/genres";
-import { Genre } from "./GameGrid";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
-}
-
-const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
+const GenreList = () => {
+  const selectedGenre = useGameQueryStore((s) => s.gameQuery.genre);
+  const setSelectedGenre = useGameQueryStore((s) => s.setGenre);
   return (
     <>
       <Heading fontSize="2xl" marginBottom={3}>
@@ -36,7 +33,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
                 fontWeight={
                   genre.name === selectedGenre?.name ? "bold" : "normal"
                 }
-                onClick={() => onSelectGenre(genre)}
+                onClick={() => setSelectedGenre(genre)}
                 fontSize="lg"
                 variant="link"
               >

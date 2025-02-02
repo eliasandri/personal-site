@@ -7,7 +7,7 @@ import philosophy from '../assets/philosophy.png'
 import psychology from '../assets/psychology.png'
 
 export const genres: Genre[] = [
-    { id: 1, name: "Fantasy", image_background: fantasy },
+   // { id: 1, name: "Fantasy", image_background: fantasy },
   /*{ id: 2, name: "Science Fiction" },
   { id: 3, name: "Mystery" },
   { id: 4, name: "Thriller" },
