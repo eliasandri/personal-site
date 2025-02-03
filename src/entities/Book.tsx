@@ -7,4 +7,5 @@ export interface Book {
   genres: string[];
   author: string;
   release_date: Date;
+  //publisher?: string;
 }

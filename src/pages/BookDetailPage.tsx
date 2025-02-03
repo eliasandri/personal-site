@@ -1,7 +1,8 @@
-import { Heading, Text } from "@chakra-ui/react";
-import { books } from "../data/books";
+import { Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
+import GameAttributes from "../components/GameAttributes";
+import { books } from "../data/books";
 
 const BookDetailPage = () => {
   const { name } = useParams();
@@ -12,6 +13,7 @@ const BookDetailPage = () => {
     <>
       <Heading>{getBookByName!.name}</Heading>
       <ExpandableText>{getBookByName!.description}</ExpandableText>
+      <GameAttributes book={getBookByName!}></GameAttributes>
     </>
   );
 };
