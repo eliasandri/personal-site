@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Grade from "./Grade";
 import Release_Date from "./Release_date";
+import { Link } from "react-router-dom";
 
 interface Props {
   book: Book;
@@ -21,7 +22,9 @@ const GameCard = ({ book }: Props) => {
     <Card>
       <Image src={book.background_image}></Image>
       <CardBody>
-        <Heading fontSize="2xl">{book.name}</Heading>
+        <Heading fontSize="2xl">
+          <Link to={"/books/" + book.name}>{book.name}</Link>
+        </Heading>
         <HStack my={3}>
           <Spacer></Spacer>
           <Grade grade={book.grade}></Grade>
