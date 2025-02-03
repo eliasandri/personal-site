@@ -1,6 +1,7 @@
 import { Heading, Text } from "@chakra-ui/react";
 import { books } from "../data/books";
 import { useParams } from "react-router-dom";
+import ExpandableText from "../components/ExpandableText";
 
 const BookDetailPage = () => {
   const { name } = useParams();
@@ -9,8 +10,8 @@ const BookDetailPage = () => {
 
   return (
     <>
-      <Heading>{getBookByName?.name}</Heading>
-      <Text>{getBookByName?.description}</Text>
+      <Heading>{getBookByName!.name}</Heading>
+      <ExpandableText>{getBookByName!.description}</ExpandableText>
     </>
   );
 };
