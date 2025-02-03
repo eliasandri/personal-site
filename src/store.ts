@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { Author, Genre } from "./components/GameGrid";
+import { Author } from "./entities/Author";
+import { Genre } from "./entities/Genre";
 
 export interface GameQuery {
   genre?: Genre | undefined;

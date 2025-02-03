@@ -1,6 +1,6 @@
 // books.ts
 
-import { Book } from "../components/GameGrid";
+import { Book } from "../entities/Book";
 import mockinbird from '../assets/Mockingbird-Alt.png'
 import navalRavikant from '../assets/the_almanack_of_naval_ravikant.webp'
 import privateEquity from '../assets/private_equity.jpg'

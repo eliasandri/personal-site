@@ -1,4 +1,4 @@
-import { Genre } from "../components/GameGrid";
+import { Genre } from "../entities/Genre";
 import fantasy from '../assets/fantasy.png'
 import autobiography from '../assets/biography-genre-line-icon-illustration-vector.jpg'
 import selfHelp from '../assets/self-help.jpg'

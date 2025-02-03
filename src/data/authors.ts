@@ -1,4 +1,4 @@
-import { Author } from "../components/GameGrid";
+import { Author } from "../entities/Author";
 
 export const authors: Author[] = [
     {

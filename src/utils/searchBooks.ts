@@ -1,4 +1,4 @@
-import { Book } from "../components/GameGrid";
+import { Book } from "../entities/Book";
 
 export function searchBooks(allBooks: Book[], searchText: string | undefined): Book[] {
     if (!searchText) {

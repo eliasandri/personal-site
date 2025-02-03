@@ -1,4 +1,4 @@
-import { Book } from "./GameGrid";
+import { Book } from "../entities/Book";
 import {
   Box,
   Card,

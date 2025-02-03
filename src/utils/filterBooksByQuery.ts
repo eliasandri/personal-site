@@ -1,4 +1,4 @@
-import { Book } from "../components/GameGrid";
+import { Book } from "../entities/Book";
 import useGameQueryStore from "../store";
 
 export function filterBooksByQuery(books: Book[]): Book[] {

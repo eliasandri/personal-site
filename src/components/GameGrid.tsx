@@ -7,28 +7,7 @@ import { searchBooks } from "../utils/searchBooks";
 import { filterBooksByQuery } from "../utils/filterBooksByQuery";
 import { useState } from "react";
 import useGameQueryStore, { GameQuery } from "../store";
-
-export interface Book {
-  id: number;
-  name: string;
-  description: string;
-  background_image?: string;
-  grade: number;
-  genres: string[];
-  author: string;
-  release_date: Date;
-}
-
-export interface Genre {
-  id: number;
-  name: string;
-  image_background?: string;
-}
-
-export interface Author {
-  id: number;
-  name: string;
-}
+import { Book } from "../entities/Book";
 
 const GameGrid = () => {
   const gameQuery = useGameQueryStore((s) => s.gameQuery);

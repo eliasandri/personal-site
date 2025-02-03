@@ -1,4 +1,4 @@
-import { Book } from "../components/GameGrid";
+import { Book } from "../entities/Book";
 
 export function sortBooks(books: Book[], sorter: keyof Book): Book[] {
     return books.sort((a, b) => {
