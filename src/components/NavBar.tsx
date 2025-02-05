@@ -1,9 +1,8 @@
-import { HStack } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import mexico from "../assets/ESCUDO_MEXICO-logo-B3E591388D-seeklogo.com.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,7 +10,7 @@ const NavBar = () => {
       <Link to="/">
         <Image src={mexico} boxSize="60px" objectFit="cover"></Image>
       </Link>
-      <SearchInput></SearchInput>
+      <SearchInput />
       <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );

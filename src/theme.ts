@@ -18,7 +18,11 @@ const theme = extendTheme({config,
             800: '#121212',
             900: '#111'
         }
-    }
+    },
+    fonts: {
+        heading: '"Roboto", sans-serif',
+        body: '"Open Sans", sans-serif',
+      },
 });
 
 export default theme;
