@@ -3,23 +3,15 @@ import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
 import BookDetailPage from "./pages/BookDetailPage";
 import ErrorPage from "./pages/ErrorPage";
-import Books from "./pages/Books";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout></Layout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <HomePage></HomePage> },
-      {
-        path: "books",
-        element: <Books></Books>,
-      },
-      {
-        path: "books/:name",
-        element: <BookDetailPage></BookDetailPage>,
-      },
+      { index: true, element: <HomePage /> },
+      { path: "books/:name", element: <BookDetailPage /> },
     ],
   },
 ]);
