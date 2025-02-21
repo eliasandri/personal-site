@@ -1,12 +1,16 @@
 // books.ts
 
 import { Book } from "../entities/Book";
-import mockinbird from '../assets/Mockingbird-Alt.png'
+import giveTake from '../assets/give_take.jpg'
 import navalRavikant from '../assets/the_almanack_of_naval_ravikant.webp'
 import privateEquity from '../assets/private_equity.jpg'
 import surrenderExperiment from '../assets/Surrender_experiment.jpg'
 import hormozi from '../assets/100m_offer.jpg'
 import unthetheredSoul from '../assets/untethered_soul.jpg'
+import miracleMorning from '../assets/miracleMorning.jpg'
+import psychologyMoney from '../assets/psychologyMoney.jpg'
+import algebraWealth from '../assets/algebraWealth.jpg'
+import normalPeople from '../assets/normalPeople.jpg'
 
 export const books: Book[] = [
     {
@@ -60,6 +64,61 @@ export const books: Book[] = [
         genres: ['Self-Help', 'Philosophy', 'Psychology'],
         author: 'Michael A. Singer',
         release_date: new Date('2007-10-03'),
+      },
+      {
+        id: 6,
+        name: "Give and Take: Why Helping Others Drives Our Success",
+        description: 
+        "In Give and Take, Adam Grant reveals how people who generously help others—Givers—often achieve the most meaningful success, challenging the notion that selfishness leads to the top. Through research and real-world stories, he shows how giving enhances networking, collaboration, and leadership.",
+        background_image: giveTake,
+        grade: 6,
+        genres: [ 'Business', 'Psychology', 'Personal-Development', 'Self-Help',],
+        author: 'Adam Grant',
+        release_date: new Date('2013-04-09'),
+      },
+      {
+        id: 7,
+        name: "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life (Before 8AM)",
+        description: 
+        "The Miracle Morning by Hal Elrod explores how a simple morning routine—focusing on personal development through practices like meditation, affirmations, and exercise—can transform your life. By dedicating time each morning to these habits, Elrod claims you can boost productivity, improve well-being, and achieve your goals faster.",
+        background_image: miracleMorning,
+        grade: 7.5,
+        genres: [ 'Productivity', 'Personal-Development', 'Self-Help',],
+        author: 'Hal Elrod',
+        release_date: new Date('2012-12-07'),
+      },
+      {
+        id: 8,
+        name: "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+        description: 
+        "The Psychology of Money by Morgan Housel explores how people's attitudes and behaviors toward money influence their financial success and overall happiness. Using engaging stories and insights, Housel demonstrates that financial decisions are more about human psychology than numbers, highlighting the importance of behavior and mindset in building wealth.",
+        background_image: psychologyMoney,
+        grade: 8.0,
+        genres: ['Business', 'Personal-Finance', 'Psychology', 'Self-Help'],
+        author: 'Morgan Housel',
+        release_date: new Date('2020-09-09'),
+      },
+      {
+        id: 9,
+        name: "The Algebra of Wealth: A Simple Formula for Financial Security",
+        description: 
+        "In The Algebra of Wealth, Scott Galloway offers a practical guide to achieving financial security in today's economy. Drawing from his experiences as a professor and entrepreneur, he provides insights on career choices, economic trends, and personal habits that contribute to wealth accumulation.",
+        background_image: algebraWealth,
+        grade: 8.5,
+        genres: ['Business', 'Personal-Finance', 'Self-Improvement'],
+        author: 'Scott Galloway',
+        release_date: new Date('2024-04-23'),
+      },
+      {
+        id: 10,
+        name: "Normal People",
+        description: 
+        "Normal People by Sally Rooney explores the complex relationship between Marianne and Connell as they navigate love, friendship, and identity from high school to university. Through emotionally nuanced storytelling, the novel examines themes of power dynamics, social class, and the impact of personal insecurities on human connection.",
+        background_image: normalPeople,
+        grade: 9.0,
+        genres: ['Drama', 'Literary-Fiction', 'Romance'],
+        author: 'Sally Rooney',
+        release_date: new Date('2018-08-28'),
       },
   ];
   
